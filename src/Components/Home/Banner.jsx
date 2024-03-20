@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
+  const [color, setColor] = useState(0);
+  const colors = ["text-grey1", "text-yellow-400", "text-rose-500"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColor((prevIndex) => {
+        return (prevIndex + 1) % colors.length;
+      });
+    }, 4300);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [color]);
+
   return (
     <div
       className="flex justify-center p-3 bg-violet1 font-k2d"
@@ -20,7 +34,8 @@ const Banner = () => {
           <p className="mt-5">
             I am
             <TypeAnimation
-              className="text-5xl text-grey1"
+              key={colors[color]}
+              className={`text-5xl ${colors[color]}`}
               sequence={[
                 " Frontend",
                 500,
@@ -34,7 +49,7 @@ const Banner = () => {
               repeat={Infinity}
             />
           </p>
-          <p className="mt-3 text-lg text-grey1">
+          <p className={`mt-3 text-lg text-grey1`}>
             (I design and code beautifully simple things, and I love what I do.)
           </p>
         </section>
