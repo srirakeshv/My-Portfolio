@@ -17,11 +17,9 @@ const Navbar = () => {
           <li>Work</li>
           <li>About</li>
           <li
-            className={`border-2 border-grey1 rounded-3xl p-2 px-5 cursor-pointer ${
-              hover1 ? "bg-grey1 text-violet1" : "text-grey1"
-            }`}
-            onMouseEnter={() => setHover1(true)}
-            onMouseLeave={() => setHover1(false)}
+            className={`rounded-3xl p-2 px-5 cursor-pointer bg-grey1 text-violet1`}
+            // onMouseEnter={() => setHover1(true)}
+            // onMouseLeave={() => setHover1(false)}
           >
             <a href="mailto:srirakeshv@gamil.com">Connect me</a>
           </li>

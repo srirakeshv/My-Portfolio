@@ -1,0 +1,37 @@
+/* html {
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  } */
+  body {
+    overflow-y: visible;
+    position: relative;
+    overflow-x: hidden;
+  }
+  html,
+  body {
+    margin: 0;
+  }
+  .races {
+    width:fit-content;
+    display:flex;
+    gap: 20px;
+    flex-wrap:nowrap;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .races .first {
+    /* font-family: 'Staatliches', cursive; */
+    font-size:30vw;
+    flex-shrink:0;
+    /* padding-right:0.3em; */
+    /* padding-left:0.3em; */
+    /* color:#e10600; */
+    border-radius: 10px;
+    margin:0;	
+    /* border: 2px solid black; */
+  }
+  
+  

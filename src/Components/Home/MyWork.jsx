@@ -3,8 +3,8 @@ import React from "react";
 const MyWork = () => {
   return (
     <section
-      className="bg-violet1 font-k2d p-3 pt-36"
-      style={{ height: "80vh" }}
+      className="bg-violet1 font-k2d p-3 pt-24"
+      style={{ height: "55vh" }}
     >
       <div className="text-center flex flex-col items-center">
         <h2 className="text-grey1 font-semibold text-4xl">My Works</h2>
