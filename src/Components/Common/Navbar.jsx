@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/themes/theme-blue.css";
 
 const Navbar = () => {
   const [hover1, setHover1] = useState(false);
@@ -17,11 +19,12 @@ const Navbar = () => {
           <li>Work</li>
           <li>About</li>
           <li
-            className={`rounded-3xl p-2 px-5 cursor-pointer bg-grey1 text-violet1`}
-            // onMouseEnter={() => setHover1(true)}
-            // onMouseLeave={() => setHover1(false)}
+          // onMouseEnter={() => setHover1(true)}
+          // onMouseLeave={() => setHover1(false)}
           >
-            <a href="mailto:srirakeshv@gamil.com">Connect me</a>
+            <a href="mailto:srirakeshv@gamil.com">
+              <AwesomeButton type="primary">Connnect Me</AwesomeButton>
+            </a>
           </li>
         </ul>
       </div>

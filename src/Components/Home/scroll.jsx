@@ -84,6 +84,7 @@ export default function Scene() {
           <div
             className="first flex max-w-fit text-grey1 border-2 border-grey1 bg-violet1"
             style={{ height: "100vh" }}
+            key={index}
           >
             <div className="flex flex-col gap-10 justify-center items-start px-4">
               <h2 className="text-3xl font-bold">{webiste.websiteName}</h2>
