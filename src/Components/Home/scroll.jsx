@@ -78,7 +78,7 @@ export default function Scene() {
   }, []); // Empty dependency array ensures useEffect runs only once after initial render
 
   return (
-    <div className="racesWraper font-k2d bg-violet1">
+    <div className="hidden md:flex racesWraper font-k2d bg-violet1">
       <div className="races">
         {websites.map((webiste, index) => (
           <div

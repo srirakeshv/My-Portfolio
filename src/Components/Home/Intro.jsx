@@ -10,9 +10,11 @@ const Intro = () => {
       style={{ minHeight: "100vh" }}
       className="flex flex-col items-center font-k2d"
     >
-      <p className="max-w-6xl w-full text-center text-xl flex flex-col p-3 mt-10">
-        <span className="text-4xl font-semibold">Hey there! I'm Rakesh,</span>{" "}
-        <span className="leading-8 mt-5">
+      <p className="max-w-6xl w-full text-center text-base sm:text-xl flex flex-col p-3 mt-10">
+        <span className="text-2xl sm:text-4xl font-semibold">
+          Hey there! I'm Rakesh,
+        </span>{" "}
+        <span className="leading-7 text-justify sm:leading-8 mt-5 sm:text-center">
           A budding Frontend developer fueled by curiosity and a passion for
           creativity. My journey into the world of design began with crafting
           websites for my college's cultural club, where I discovered the thrill
@@ -41,7 +43,7 @@ const Intro = () => {
             <h3 className="text-grey1 text-center text-xl font-bold">
               Languages that I know
             </h3>
-            <ul className="flex gap-1 mt-1 text-slate-950 text-center flex-wrap font-semibold">
+            <ul className="text-base flex gap-1 mt-1 text-slate-950 text-center flex-wrap font-semibold">
               {Languages.map((Language, index) => (
                 <li key={index}>
                   {index === Languages.length - 1 ? Language : Language + ","}

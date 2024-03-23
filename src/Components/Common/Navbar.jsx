@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-blue.css";
+import MobileMenu from "../Home/MobileMenu";
+import Overlay from "../Home/Overlay";
+import "../Home/styles2.css";
 
 const Navbar = () => {
-  const [hover1, setHover1] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
-    <nav className="bg-violet1 p-3 font-k2d flex justify-center">
+    <nav className="bg-violet1 p-3 font-k2d flex justify-center relative">
       <div className="max-w-6xl w-full flex items-center justify-between">
         <img
           src={`${process.env.PUBLIC_URL}/Asset/Images/Logo.png`}
           alt="Logo"
           className="w-20 h-12"
         />
-        <ul className="flex items-center gap-5 text-xl text-grey1">
+        <ul className="hidden md:flex items-center gap-5 text-xl text-grey1">
           <li>Home</li>
           <li>Work</li>
           <li>About</li>
@@ -23,11 +26,21 @@ const Navbar = () => {
           // onMouseLeave={() => setHover1(false)}
           >
             <a href="mailto:srirakeshv@gamil.com">
-              <AwesomeButton type="primary">Connnect Me</AwesomeButton>
+              <AwesomeButton type="primary" className="aws-btn1">
+                Connnect Me
+              </AwesomeButton>
             </a>
           </li>
         </ul>
+        <img
+          className="md:hidden cursor-pointer"
+          src={`${process.env.PUBLIC_URL}/Asset/Images/icons8-fries-menu-48.png`}
+          alt="fries-menu"
+          onClick={() => setActive(!active)}
+        />
       </div>
+      {active && <MobileMenu active={active} setActive={setActive} />}
+      <Overlay active={active} setActive={setActive} />
     </nav>
   );
 };

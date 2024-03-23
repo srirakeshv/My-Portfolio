@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { ArrowDownToLine } from "lucide-react";
+// import "react-awesome-button/dist/themes/theme-blue.css";
 import "../Home/styles2.css";
 
 const KnowMe = () => {
@@ -54,7 +55,7 @@ const KnowMe = () => {
         <div>
           <AwesomeButton
             type="primary"
-            className="aws-btn1"
+            className="aws-btn2"
             after={buttonText === "Download" ? <ArrowDownToLine /> : ""}
             onPress={handleClick}
           >

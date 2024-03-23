@@ -16,7 +16,7 @@ const Footer = () => {
         alt="Logo"
         className="w-20 h-12"
       />
-      <p className="flex flex-col text-center text-grey1 text-2xl">
+      <p className="flex flex-col text-center text-grey1 text-lg sm:text-2xl">
         Success is not final, failure is not fatal:{" "}
         <span>It is the courage to continue that counts.</span>
       </p>

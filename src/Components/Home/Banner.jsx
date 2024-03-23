@@ -21,21 +21,21 @@ const Banner = () => {
       className="flex justify-center p-3 bg-violet1 font-k2d"
       style={{ minHeight: "88vh" }}
     >
-      <div className="max-w-6xl w-full flex items-center">
-        <section className="flex-1 text-5xl">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row md:items-center">
+        <section className="flex-1 text-2xl sm:text-3xl md-1:text-4xl xl:text-5xl">
           <h1 className="flex gap-1">
             Hi{" "}
             <img
-              className="w-12 h-12"
+              className="w-8 h-8 sm:w-12 sm:h-12"
               src={`${process.env.PUBLIC_URL}/Asset/Images/Hi.png`}
               alt=""
             />
           </h1>
-          <p className="mt-5">
+          <p className="mt-2 sm:mt-5">
             I am
             <TypeAnimation
               key={colors[color]}
-              className={`text-5xl ${colors[color]}`}
+              className={`text-2xl sm:text-3xl md-1:text-4xl xl:text-5xl ${colors[color]}`}
               sequence={[
                 " Frontend",
                 500,
@@ -49,7 +49,7 @@ const Banner = () => {
               repeat={Infinity}
             />
           </p>
-          <p className={`mt-3 text-lg text-grey1`}>
+          <p className={`mt-3 text-base sm:text-lg text-grey1`}>
             (I design and code beautifully simple things, and I love what I do.)
           </p>
         </section>

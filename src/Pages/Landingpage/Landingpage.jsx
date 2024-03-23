@@ -7,6 +7,7 @@ import Scene from "../../Components/Home/scroll";
 import Button from "../../Components/Home/Button";
 import KnowMe from "../../Components/Home/KnowMe";
 import Footer from "../../Components/Common/Footer";
+import MobileScroll from "../../Components/Home/MobileScroll";
 // import Buttons from "../../Components/Home/Button2";
 
 const Landingpage = () => {
@@ -17,6 +18,7 @@ const Landingpage = () => {
       <Intro />
       <MyWork />
       <Scene />
+      <MobileScroll />
       <KnowMe />
       <Footer />
     </div>
