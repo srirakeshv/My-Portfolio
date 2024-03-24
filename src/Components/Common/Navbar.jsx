@@ -51,10 +51,7 @@ const Navbar = ({ workRef, aboutRef }) => {
           >
             About
           </li>
-          <li
-          // onMouseEnter={() => setHover1(true)}
-          // onMouseLeave={() => setHover1(false)}
-          >
+          <li>
             <a href="mailto:srirakeshv@gamil.com">
               <AwesomeButton type="primary" className="aws-btn1">
                 Connnect Me

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-blue.css";
-// import "react-awesome-button/dist/styles.css";
 
 const Footer = () => {
   const [hover1, setHover1] = useState(false);
