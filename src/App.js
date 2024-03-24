@@ -1,12 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Landingpage from "./Pages/Landingpage/Landingpage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./scrolltotop";
 
 function App() {
   return (
-    <div className="">
-      <Landingpage />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" exact element={<Landingpage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

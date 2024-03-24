@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/themes/theme-blue.css";
 // import "react-awesome-button/dist/styles.css";
 
 const Footer = () => {
@@ -16,9 +18,19 @@ const Footer = () => {
         alt="Logo"
         className="w-20 h-12"
       />
-      <p className="flex flex-col text-center text-grey1 text-lg sm:text-2xl">
+      <p className="flex flex-col text-center text-grey1 text-base sm:text-2xl relative">
         Success is not final, failure is not fatal:{" "}
         <span>It is the courage to continue that counts.</span>
+        <img
+          src={`${process.env.PUBLIC_URL}/Asset/Images/quote.png`}
+          alt="Quote"
+          className="absolute -top-5 -left-8 w-10 h-10 z-0"
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/Asset/Images/quote.png`}
+          alt="Quote"
+          className="absolute -bottom-5 -right-10 w-10 h-10 z-0 transform -rotate-180"
+        />
       </p>
       <div className="mt-3 flex gap-3 items-center">
         <a
@@ -61,6 +73,13 @@ const Footer = () => {
           <Mail />
         </a>
       </div>
+      <li className="list-none">
+        <a href="mailto:srirakeshv@gamil.com">
+          <AwesomeButton type="primary" className="aws-btn1">
+            Connnect Me
+          </AwesomeButton>
+        </a>
+      </li>
     </div>
   );
 };

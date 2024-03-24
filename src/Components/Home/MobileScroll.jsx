@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Scale } from "lucide-react";
 
 const MobileScroll = () => {
   const [hover, setHover] = useState(null);
@@ -37,7 +39,14 @@ const MobileScroll = () => {
     <div className="bg-violet1 font-k2d flex justify-center items-center p-3 pb-20 md:hidden">
       <div className="max-w-6xl flex gap-5 flex-wrap items-center justify-center">
         {websites.map((website, index) => (
-          <div
+          <motion.div
+            initial={{ Scale: 1 }}
+            animate={{ scale: hover === index ? 1.1 : 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
             className="basis-80 h-52 rounded-lg p-3 flex flex-col justify-center"
             key={index}
             style={{
@@ -79,7 +88,7 @@ const MobileScroll = () => {
                 </a>
               </button>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
