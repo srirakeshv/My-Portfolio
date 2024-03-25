@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Landingpage />} />
+        <Route path="/My-Portfolio/" element={<Landingpage />} />
       </Routes>
     </BrowserRouter>
   );
