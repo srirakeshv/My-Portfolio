@@ -64,7 +64,7 @@ const Footer = () => {
             hover1 ? "bg-grey1 text-slate-950" : "bg-slate-950 text-lightgrey"
           }`}
           style={{ borderWidth: "1px" }}
-          href="https://www.linkedin.com/in/sri-rakesh-v/"
+          href="https://github.com/srirakeshv"
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setHover1(true)}

@@ -50,7 +50,7 @@ const MobileMenu = ({ active, setActive, workRef, aboutRef }) => {
         <li
           className="px-3 pl-5 pb-2 cursor-pointer"
           style={{ borderBottomWidth: "0.1px", borderColor: "#7005fc8f" }}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/My-Portfolio/")}
         >
           Home
         </li>

@@ -42,7 +42,7 @@ const MobileScroll = () => {
             className="basis-80 h-52 rounded-lg p-3 flex flex-col justify-center"
             key={index}
             style={{
-              backgroundImage: `linear-gradient(rgba(46, 44, 44, 0.521), rgba(36, 35, 35, 0.6)), url(${website.imageLink})`,
+              backgroundImage: `linear-gradient(rgba(46, 44, 44, 0.521), rgba(36, 35, 35, 0.6)), url(${process.env.PUBLIC_URL}${website.imageLink})`,
               objectFit: "cover",
               backgroundSize: "100% 100%",
             }}

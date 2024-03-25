@@ -34,10 +34,13 @@ const Navbar = ({ workRef, aboutRef }) => {
           src={`${process.env.PUBLIC_URL}/Asset/Images/Logo.png`}
           alt="Logo"
           className="w-20 h-12 cursor-pointer"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/My-Portfolio/")}
         />
         <ul className="hidden md:flex items-center gap-5 text-xl text-grey1">
-          <li className="cursor-pointer" onClick={() => navigate("/")}>
+          <li
+            className="cursor-pointer"
+            onClick={() => navigate("/My-Portfolio/")}
+          >
             Home
           </li>
           <li
