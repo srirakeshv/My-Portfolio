@@ -14,7 +14,7 @@ const Banner = () => {
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
-  }, [color]);
+  }, [color, colors]);
 
   return (
     <div
