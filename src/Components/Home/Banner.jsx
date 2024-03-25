@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   const [color, setColor] = useState(0);
-  const colors = ["text-grey1", "text-yellow-400", "text-rose-500"];
+  const colors = useMemo(
+    () => ["text-grey1", "text-yellow-400", "text-rose-500"],
+    []
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
