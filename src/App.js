@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" exact element={<Landingpage />} />
+        <Route path="/" element={<Landingpage />} />
       </Routes>
     </BrowserRouter>
   );
