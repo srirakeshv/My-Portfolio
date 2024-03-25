@@ -1,17 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { AwesomeButton } from "react-awesome-button";
-import "react-awesome-button/dist/themes/theme-blue.css";
 
 const Footer = () => {
   const [hover1, setHover1] = useState(false);
   const [hover2, setHover2] = useState(false);
   const [hover3, setHover3] = useState(false);
+  const [bg, setBg] = useState(false);
+
+  useEffect(() => {
+    const handleCheck = () => {
+      window.innerWidth < 500 ? setBg(true) : setBg(false);
+    };
+    window.addEventListener("resize", handleCheck);
+    return () => window.removeEventListener("resize", handleCheck);
+  }, []);
+
   return (
     <div
-      className="bg-violet1 flex flex-col justify-center items-center gap-8 font-k2d"
-      style={{ minHeight: "70vh" }}
+      className="bg-slate-950 flex flex-col justify-center items-center gap-8 font-k2d p-2"
+      style={{
+        minHeight: "75vh",
+        backgroundImage: `url(${process.env.PUBLIC_URL}/Asset/Images/footerbg.png)`,
+        objectFit: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: `${bg ? "100% 100%" : "100% 150%"}`,
+        backgroundSize: `${bg ? "45% 40%" : ""}`,
+      }}
     >
+      <div className="bg-violet1 max-w-5xl w-full h-32 rounded-2xl -mt-56 sm:-mt-44 md:-mt-40 flex justify-center items-center">
+        <li className="list-none w-full flex justify-center items-center">
+          <a
+            href="mailto:srirakeshv@gamil.com"
+            className="max-w-44 w-full flex justify-center items-center"
+          >
+            <button className="bg-pink-600 rounded-md p-3 text-grey1 text-xl shadow-lg shadow-pink-900 max-w-44 w-full transform hover:-translate-y-1 transition-transform">
+              Ping Me
+            </button>
+          </a>
+        </li>
+      </div>
       <img
         src={`${process.env.PUBLIC_URL}/Asset/Images/Logo.png`}
         alt="Logo"
@@ -34,7 +61,7 @@ const Footer = () => {
       <div className="mt-3 flex gap-3 items-center">
         <a
           className={`rounded-full border-lightgrey p-3  ${
-            hover1 ? "bg-grey1 text-violet1" : "bg-violet1 text-lightgrey"
+            hover1 ? "bg-grey1 text-slate-950" : "bg-slate-950 text-lightgrey"
           }`}
           style={{ borderWidth: "1px" }}
           href="https://www.linkedin.com/in/sri-rakesh-v/"
@@ -47,7 +74,7 @@ const Footer = () => {
         </a>
         <a
           className={`rounded-full border-lightgrey p-3  ${
-            hover2 ? "bg-grey1 text-violet1" : "bg-violet1 text-lightgrey"
+            hover2 ? "bg-grey1 text-slate-950" : "bg-slate-950 text-lightgrey"
           }`}
           style={{ borderWidth: "1px" }}
           href="https://www.linkedin.com/in/sri-rakesh-v/"
@@ -60,7 +87,7 @@ const Footer = () => {
         </a>
         <a
           className={`rounded-full border-lightgrey p-3  ${
-            hover3 ? "bg-grey1 text-violet1" : "bg-violet1 text-lightgrey"
+            hover3 ? "bg-grey1 text-slate-950" : "bg-slate-950 text-lightgrey"
           }`}
           style={{ borderWidth: "1px" }}
           href="mailto:srirakeshv@gmail.com"
@@ -72,13 +99,6 @@ const Footer = () => {
           <Mail />
         </a>
       </div>
-      <li className="list-none">
-        <a href="mailto:srirakeshv@gamil.com">
-          <AwesomeButton type="primary" className="aws-btn1">
-            Connnect Me
-          </AwesomeButton>
-        </a>
-      </li>
     </div>
   );
 };

@@ -33,7 +33,8 @@ const Navbar = ({ workRef, aboutRef }) => {
         <img
           src={`${process.env.PUBLIC_URL}/Asset/Images/Logo.png`}
           alt="Logo"
-          className="w-20 h-12"
+          className="w-20 h-12 cursor-pointer"
+          onClick={() => navigate("/")}
         />
         <ul className="hidden md:flex items-center gap-5 text-xl text-grey1">
           <li className="cursor-pointer" onClick={() => navigate("/")}>
@@ -66,7 +67,14 @@ const Navbar = ({ workRef, aboutRef }) => {
           onClick={() => setActive(!active)}
         />
       </div>
-      {active && <MobileMenu active={active} setActive={setActive} />}
+      {active && (
+        <MobileMenu
+          active={active}
+          setActive={setActive}
+          workRef={workRef}
+          aboutRef={aboutRef}
+        />
+      )}
       <Overlay active={active} setActive={setActive} />
     </nav>
   );

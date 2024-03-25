@@ -49,7 +49,9 @@ const Banner = () => {
               repeat={Infinity}
             />
           </p>
-          <p className={`mt-3 text-base sm:text-lg text-grey1`}>
+          <p
+            className={`mt-3 text-base text-center sm:text-start sm:text-lg text-grey1`}
+          >
             (I design and code beautifully simple things, and I love what I do.)
           </p>
         </section>

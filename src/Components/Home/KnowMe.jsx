@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { ArrowDownToLine } from "lucide-react";
-// import "react-awesome-button/dist/themes/theme-blue.css";
-import "../Home/styles2.css";
+import "react-awesome-button/dist/themes/theme-blue.css";
+// import "../Home/styles2.css";
 
 const KnowMe = () => {
   const [buttonText, setButtonText] = useState("Download");
@@ -48,14 +48,14 @@ const KnowMe = () => {
   return (
     <div
       className="flex justify-center items-center font-k2d"
-      style={{ minHeight: "30vh" }}
+      style={{ minHeight: "50vh" }}
     >
       <div className="max-w-6xl flex flex-col items-center gap-5">
         <p className="text-3xl font-semibold">Know About me</p>
         <div>
           <AwesomeButton
             type="primary"
-            className="aws-btn2"
+            className=""
             after={buttonText === "Download" ? <ArrowDownToLine /> : ""}
             onPress={handleClick}
           >

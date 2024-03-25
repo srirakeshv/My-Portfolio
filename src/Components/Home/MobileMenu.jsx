@@ -3,9 +3,11 @@ import { AwesomeButton } from "react-awesome-button";
 import "../Home/styles2.css";
 import { X } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const MobileMenu = ({ active, setActive }) => {
+const MobileMenu = ({ active, setActive, workRef, aboutRef }) => {
   const controls = useAnimation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (active) {
@@ -15,6 +17,21 @@ const MobileMenu = ({ active, setActive }) => {
     }
   }, [active, controls]);
 
+  useEffect(() => {
+    // Ensure the refs are properly assigned after the component is mounted
+    aboutRef.current = aboutRef.current || null;
+    workRef.current = workRef.current || null;
+  }, []);
+
+  // Function to handle smooth scrolling
+  const scrollToSection = (ref) => {
+    // console.log("Scrolling to section:", ref);
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+      setActive(false); // Close mobile menu if open
+    }
+  };
+
   return (
     <motion.div
       className="absolute top-16 z-10 right-0 flex flex-col"
@@ -23,7 +40,7 @@ const MobileMenu = ({ active, setActive }) => {
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
     >
       <X
-        className="text-grey1 font-semibold self-end"
+        className="text-grey1 font-semibold self-end cursor-pointer"
         size={40}
         onClick={() => setActive(false)}
       />
@@ -32,28 +49,31 @@ const MobileMenu = ({ active, setActive }) => {
         style={{ minHeight: "80vh" }}
       >
         <li
-          className="px-3 pl-5 pb-2"
+          className="px-3 pl-5 pb-2 cursor-pointer"
           style={{ borderBottomWidth: "0.1px", borderColor: "#7005fc8f" }}
+          onClick={() => navigate("/")}
         >
           Home
         </li>
         <li
-          className="px-3 pl-5 pb-2"
+          className="px-3 pl-5 pb-2 cursor-pointer"
           style={{ borderBottomWidth: "0.1px", borderColor: "#7005fc8f" }}
+          onClick={() => scrollToSection(workRef)}
         >
           Work
         </li>
         <li
-          className="px-3 pl-5 pb-2"
+          className="px-3 pl-5 pb-2 cursor-pointer"
           style={{ borderBottomWidth: "0.1px", borderColor: "#7005fc8f" }}
+          onClick={() => scrollToSection(aboutRef)}
         >
           About
         </li>
         <li className="text-center mt-7">
           <a href="mailto:srirakeshv@gamil.com">
-            <AwesomeButton type="primary" className="aws-btn1">
-              Connnect Me
-            </AwesomeButton>
+            <button className="bg-violet1 rounded-md p-3 text-grey1 text-xl shadow-lg shadow-violet-600 max-w-44 w-full transform hover:-translate-y-1 transition-transform">
+              Connect Me
+            </button>
           </a>
         </li>
       </ul>

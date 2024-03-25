@@ -39,14 +39,7 @@ const MobileScroll = () => {
     <div className="bg-violet1 font-k2d flex justify-center items-center p-3 pb-20 md:hidden">
       <div className="max-w-6xl flex gap-5 flex-wrap items-center justify-center">
         {websites.map((website, index) => (
-          <motion.div
-            initial={{ Scale: 1 }}
-            animate={{ scale: hover === index ? 1.1 : 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            }}
+          <div
             className="basis-80 h-52 rounded-lg p-3 flex flex-col justify-center"
             key={index}
             style={{
@@ -57,38 +50,63 @@ const MobileScroll = () => {
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(null)}
           >
-            <h2
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: hover === index ? -100 : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
               className={`text-grey1 text-3xl font-semibold ${
                 hover === index ? "hidden" : "flex"
               }`}
             >
               {website.websiteName}
-            </h2>
-            <p
+            </motion.div>
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: hover === index ? -100 : 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
               className={`text-grey1 text-lg mt-4 ${
                 hover === index ? "hidden" : "flex"
               }`}
             >
               {website.description}
-            </p>
+            </motion.div>
             {hover === index && (
-              <button
-                className={`self-center border-2 border-lightgrey rounded-full w-44 text-xl p-1 ${
-                  hover2 === index ? "bg-grey1 text-violet1" : "text-grey1"
-                }`}
-                onMouseEnter={() => setHover2(index)}
-                onMouseLeave={() => setHover2(null)}
+              <motion.div
+                className="self-center"
+                initial={{ y: 100 }}
+                animate={{ y: hover === index ? 0 : 100 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                }}
               >
-                <a
-                  href={website.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  className={`self-center border-2 border-lightgrey rounded-full w-44 text-xl p-1 ${
+                    hover2 === index ? "bg-grey1 text-violet1" : "text-grey1"
+                  }`}
+                  onMouseEnter={() => setHover2(index)}
+                  onMouseLeave={() => setHover2(null)}
                 >
-                  View Site
-                </a>
-              </button>
+                  <a
+                    href={website.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Site
+                  </a>
+                </button>
+              </motion.div>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
