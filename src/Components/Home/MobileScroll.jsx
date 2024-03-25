@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Scale } from "lucide-react";
 
 const MobileScroll = () => {
   const [hover, setHover] = useState(null);

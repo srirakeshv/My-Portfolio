@@ -21,7 +21,7 @@ const MobileMenu = ({ active, setActive, workRef, aboutRef }) => {
     // Ensure the refs are properly assigned after the component is mounted
     aboutRef.current = aboutRef.current || null;
     workRef.current = workRef.current || null;
-  }, []);
+  }, [aboutRef, workRef]);
 
   // Function to handle smooth scrolling
   const scrollToSection = (ref) => {
