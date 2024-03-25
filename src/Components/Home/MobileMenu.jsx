@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { AwesomeButton } from "react-awesome-button";
 import "../Home/styles2.css";
 import { X } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
